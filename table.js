@@ -1,7 +1,6 @@
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const data = require('./rfqData.json');
-const Data = require('./Data.js')
 const Footer = require('./Footer.js')
 const drawHeader = require('./Header.js')
 const TableHeading = (doc, table, y)=>{

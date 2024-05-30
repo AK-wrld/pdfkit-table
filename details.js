@@ -1,10 +1,10 @@
 const PDFDocument = require('pdfkit')
-const Data = require('./Data.js')
+const Data = require('./Data.json')
 const details = (doc)=> {
     doc
     .font('Helvetica-Bold')
     .fontSize(14)
-    .text(Data.quote, (doc.page.width/2)-(doc.page.margins.left+doc.page.margins.right/2)-30, doc.y + 20, {
+    .text("REQUEST FOR QUOTE", (doc.page.width/2)-(doc.page.margins.left+doc.page.margins.right/2)-30, doc.y + 20, {
         width: 200,
         // align: 'center'
     })
@@ -21,7 +21,7 @@ doc.y = y
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.requesterName, 155, doc.y, {
+    .text(Data.name, 155, doc.y, {
         width: 230
     })
 // doc.moveDown()
@@ -34,7 +34,7 @@ doc.y = y;
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.status, 446, doc.y, {
+    .text(Data.rfq.status, 446, doc.y, {
         width: 100
     })
 y = doc.y
@@ -46,7 +46,7 @@ doc.y = y
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.quoteId, 110, doc.y + 5, {
+    .text(Data.requestUniqueCode, 110, doc.y + 5, {
         width: 230
     })
 doc.y = y
@@ -58,7 +58,7 @@ doc.y = y
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.numberOfOrders, 472, doc.y + 5)
+    .text(Data.rfq.order, 472, doc.y + 5)
 y = doc.y
 doc
     .font('Helvetica-Bold')
@@ -81,7 +81,7 @@ doc.y = y;
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.bidDate, 458, doc.y + 5, {
+    .text(Data.rfq.bidDate, 458, doc.y + 5, {
         width: 100
     })
 y = doc.y
@@ -93,7 +93,7 @@ doc.y = y
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.deliveryDate, 486, doc.y + 5, {
+    .text(Data.rfq.deliveryDate, 486, doc.y + 5, {
         width: 100
     })
 y = doc.y
@@ -105,7 +105,7 @@ doc.y = y
 doc
     .font('Helvetica')
     .fontSize(12)
-    .text(Data.paymentTerms, 495, doc.y + 5, {
+    .text(Data.rfq.paymentTerms, 495, doc.y + 5, {
         width: 100
     })
 }
